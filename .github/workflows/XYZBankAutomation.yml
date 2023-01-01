@@ -26,6 +26,15 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+
+    - name: Start docker service
+        working-directory: ./TechnicalAssessment
+        run: sudo service docker start
+
+    - name: Start docker compose
+      working-directory: ./TechnicalAssessment
+      run: |
+        docker-compose up -d
         
     - name: Build with Maven
       run: mvn -B package --file pom.xml

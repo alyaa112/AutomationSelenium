@@ -7,8 +7,6 @@ import com.seb.technicalassessment.utility.CommonTests;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import java.sql.DriverManager;
-
 public class LoginScreenPage extends CommonTests {
 
     LoginScreen loginScreen = new LoginScreen();

@@ -1,6 +1,5 @@
 package com.seb.technicalassessment.pages;
 
-import com.oracle.tools.packager.Log;
 import com.seb.technicalassessment.pageobjects.LoginScreen;
 import com.seb.technicalassessment.utility.BaseTest;
 import com.seb.technicalassessment.utility.CommonTests;
@@ -18,19 +17,19 @@ public class LoginScreenPage extends CommonTests {
     //Method to launch web app
     public void launchWebApp() {
         BaseTest.setup();
-        Log.info("Application launched");
+        System.out.print("Application launched");
     }
 
     //method to verify login screen
     public void verifyLoginScreenVisibility() {
         loginScreen.MENU_HEADER.isDisplayed();
         loginScreen.USER_OPTION.get(0).isDisplayed();
-        Log.info("Menu screen is visible");
+        System.out.print("Menu screen is visible");
     }
 
     //method to click on user option
     public void clickUserOption(int option) {
         loginScreen.USER_OPTION.get(option).click();
-        Log.info("Clicked on " + option);
+        System.out.print("Clicked on " + option);
     }
 }

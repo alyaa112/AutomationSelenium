@@ -1,6 +1,5 @@
 package com.seb.technicalassessment.utility;
 
-import com.oracle.tools.packager.Log;
 import org.openqa.selenium.Capabilities;
 
 public class CapabilityFactory {
@@ -11,7 +10,7 @@ public class CapabilityFactory {
         if (browser.equals("chrome"))
             capabilities = (Capabilities) OptionsManager.getChromeOptions();
         else
-            Log.info("No browser");
+            System.out.print("No browser");
         return capabilities;
     }
 }

@@ -1,7 +1,6 @@
 package com.seb.technicalassessment.pages;
 
 import com.seb.technicalassessment.pageobjects.ManagerScreen;
-import com.oracle.tools.packager.Log;
 import com.seb.technicalassessment.utility.CommonTests;
 import com.seb.technicalassessment.utility.Constants;
 import org.openqa.selenium.By;
@@ -30,13 +29,13 @@ public class ManagerScreenPage extends CommonTests {
         managerScreen.ADD_CUST_OPTION.isDisplayed();
         managerScreen.OPEN_ACC_OPTION.isDisplayed();
         managerScreen.CUST_OPTION.isDisplayed();
-        Log.info("Manager screen is visible");
+        System.out.print("Manager screen is visible");
     }
 
     //method to click on add customers
     public void clickAddCust() {
         managerScreen.ADD_CUST_OPTION.click();
-        Log.info("Clicked on add cust option");
+        System.out.print("Clicked on add cust option");
     }
 
     //method to add customer details
@@ -53,18 +52,18 @@ public class ManagerScreenPage extends CommonTests {
     //method to click Submit button
     public void clickAddCustomerButton() {
         managerScreen.ADD_CUSTOMER_BUTTON.click();
-        Log.info("Clicked on add customer button");
+        System.out.print("Clicked on add customer button");
     }
 
     //method to click Ok on popup
     public void clickOKOnPopup() {
         if (alertVisibility()) {
-            Log.info("Details are saved");
+            System.out.print("Details are saved");
             try {
                 closeAlert();
-                Log.info("Close popup");
+                System.out.print("Close popup");
             } catch (Exception error){
-                Log.info("Cannot close popup");
+                System.out.print("Cannot close popup");
             }
         }
     }
@@ -79,7 +78,7 @@ public class ManagerScreenPage extends CommonTests {
         for (int i=0; i<lastName.length; i++) {
             verifyCustomersAreAdded(String.valueOf(lastName));
         }
-        Log.info("All customer details are added");
+        System.out.print("All customer details are added");
     }
 
     //method to verify customer details are added()
@@ -91,7 +90,7 @@ public class ManagerScreenPage extends CommonTests {
                     "table-striped']/tbody/tr[" + i + "]/td[]")).getText();
 
             if (cellValue.equalsIgnoreCase(name)) {
-                Log.info("Customer details added : " + (i+1));
+                System.out.print("Customer details added : " + (i+1));
             }
         }
     }
@@ -112,7 +111,7 @@ public class ManagerScreenPage extends CommonTests {
     public void searchCustName(String name) {
         managerScreen.CUSTOMER_SEARCH_BAR.click();
         managerScreen.CUSTOMER_SEARCH_BAR.sendKeys(name);
-        Log.info("Search name");
+        System.out.print("Search name");
     }
 
     //method to verify customer first and last name is correct to delete
@@ -128,7 +127,7 @@ public class ManagerScreenPage extends CommonTests {
             if (cellValue.equalsIgnoreCase(name))
             {
                 DELETE_BUTTON.click();
-                Log.info("Customer details are deleted");
+                System.out.print("Customer details are deleted");
             }
         }
     }

@@ -1,10 +1,7 @@
 package com.seb.technicalassessment.utility;
 
 import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
-import java.sql.DriverManager;
 
 public abstract class CommonTests {
 

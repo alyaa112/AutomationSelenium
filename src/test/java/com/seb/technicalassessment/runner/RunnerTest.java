@@ -6,6 +6,7 @@ import io.cucumber.testng.PickleWrapper;
 import io.cucumber.testng.TestNGCucumberRunner;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 @CucumberOptions(
@@ -27,6 +28,11 @@ public class RunnerTest {
     @Test(dataProvider = "feature")
     public void features(PickleWrapper eventWrapper, FeatureWrapper cucumberFeature) throws Throwable {
         testNGCucumberRunner.runScenario(eventWrapper.getPickle());
+    }
+
+    @DataProvider(parallel = false)
+    public Object[][] feature() {
+        return testNGCucumberRunner.provideScenarios();
     }
 
     @AfterClass(alwaysRun = true)

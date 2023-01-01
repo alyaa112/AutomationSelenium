@@ -38,11 +38,11 @@ jobs:
       run: mvn clean install -B package --file pom.xml
 
     - name: Keep artifacts
-        uses: actions/upload-artifact@v3.0.0
-        if: always()
-        with:
-          path: ${{ github.workspace }}/result/
-          if-no-files-found: error
+      uses: actions/upload-artifact@v3.0.0
+      if: always()
+      with:
+        path: ${{ github.workspace }}/result/
+        if-no-files-found: error
    
    #prints out build status with report for each workflow 
     - name: Report

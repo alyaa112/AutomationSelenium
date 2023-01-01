@@ -10,7 +10,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 @CucumberOptions(
-        plugin = {"pretty", "json:target/cucumber-reports/Cucumber.json", "html:target/cucumber-reports", "junit:target/cucumber-reports/Cucumber.xml"},
+        plugin = {"pretty", "json:target/cucumber-reports/Cucumber.json", "html:target/cucumber-reports/Cucumber.html",
+                "junit:target/cucumber-reports/Cucumber.xml"},
         features = {"src/test/feature/"},
         glue = {"com.seb.technicalassessment.stepdefinition"},
         tags = "@SEBTest",

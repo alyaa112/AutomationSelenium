@@ -27,6 +27,11 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+    - name: Restore Maven cache
+      uses: skjolber/maven-cache-github-action@v1
+      with:
+        step: restore
+
     - name: Start docker service
       run: sudo service docker start
 

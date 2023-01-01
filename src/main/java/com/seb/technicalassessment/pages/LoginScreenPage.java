@@ -2,6 +2,7 @@ package com.seb.technicalassessment.pages;
 
 import com.oracle.tools.packager.Log;
 import com.seb.technicalassessment.pageobjects.LoginScreen;
+import com.seb.technicalassessment.utility.BaseTest;
 import com.seb.technicalassessment.utility.CommonTests;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -14,6 +15,12 @@ public class LoginScreenPage extends CommonTests {
 
     public LoginScreenPage(RemoteWebDriver remoteWebDriver) {
         PageFactory.initElements(remoteWebDriver, loginScreen);
+    }
+
+    //Method to launch web app
+    public void launchWebApp() {
+        BaseTest.setup();
+        Log.info("Application launched");
     }
 
     //method to verify login screen

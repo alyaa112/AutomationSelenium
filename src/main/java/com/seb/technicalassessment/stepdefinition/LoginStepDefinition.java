@@ -13,6 +13,7 @@ public class LoginStepDefinition {
 
     @Given("^user login as bank manager$")
     public void loginAsBankManager() {
+        loginScreenPage.launchWebApp();
         loginScreenPage.verifyLoginScreenVisibility();
         loginScreenPage.clickUserOption(Constants.CommonDetails.BANK_MANAGER_OPTION);
     }
@@ -24,6 +25,7 @@ public class LoginStepDefinition {
 
     @And("^user goes to Customer tab$")
     public void seeCustomerTab() {
+        managerScreenPage.verifyManagerScreenVisibility();
         managerScreenPage.clickOnCustomerButton();
     }
 }

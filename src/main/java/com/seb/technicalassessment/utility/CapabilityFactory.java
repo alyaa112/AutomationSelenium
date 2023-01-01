@@ -7,10 +7,9 @@ public class CapabilityFactory {
     public Capabilities capabilities;
 
     public Capabilities getCapabilities(String browser) {
-        if (browser.equals("chrome"))
-            capabilities = (Capabilities) OptionsManager.getChromeOptions();
-        else
-            System.out.print("No browser");
+        if (browser.equals("chrome")) {
+            capabilities = OptionsManager.getChromeOptions();
+        }
         return capabilities;
     }
 }

@@ -13,5 +13,8 @@ public interface AppLocators {
         String customersOption = "///button[@innertext='Customers']";
         String detailsTextfield = "form .form-group [type]";
         String addCustomerButton = ".btn-default";
+        String customerSearchBar = "//input[@type='text']";
+        String tableLastNameCol = "//table[@class='table table-bordered table-striped']/tbody/tr[]/td[2]";
+
     }
 }

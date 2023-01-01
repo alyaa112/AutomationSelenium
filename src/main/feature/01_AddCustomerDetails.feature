@@ -7,6 +7,5 @@ Feature: Add customer details feature
     Given user login as bank manager
     And manager screen is visible
 
-    @SEBTest
     When user adds new customer details
     Then customer details should be saved

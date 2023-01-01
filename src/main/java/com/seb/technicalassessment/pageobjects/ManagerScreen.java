@@ -26,4 +26,12 @@ public class ManagerScreen implements AppLocators.ManagerScreen {
     //page locator for details textfields
     @FindBy(css = addCustomerButton)
     public WebElement ADD_CUSTOMER_BUTTON;
+
+    //page locator for customer search bar
+    @FindBy(xpath = customerSearchBar)
+    public WebElement CUSTOMER_SEARCH_BAR;
+
+    //page locator for table field
+    @FindBy(xpath = tableLastNameCol)
+    public List<WebElement> TABLE_LASTNAME_COL;
 }

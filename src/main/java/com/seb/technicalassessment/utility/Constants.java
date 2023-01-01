@@ -16,6 +16,7 @@ public class Constants {
         public static final int FIRST_NAME_TEXTFIELD = 0;
         public static final int LAST_NAME_TEXTFIELD = 1;
         public static final int POSTCODE_TEXTFIELD = 2;
+        public static final int CUSTOMERS = 9;
     }
 
     public class ChromeConfigurations {

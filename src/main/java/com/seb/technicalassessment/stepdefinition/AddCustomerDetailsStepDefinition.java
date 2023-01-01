@@ -16,6 +16,6 @@ public class AddCustomerDetailsStepDefinition {
 
     @Then("^customer details should be saved$")
     public void custDetailsShouldBeSaved() {
-        managerScreenPage.verifyCustomerDetailsAdded();
+        managerScreenPage.checkCustomerDetails();
     }
 }

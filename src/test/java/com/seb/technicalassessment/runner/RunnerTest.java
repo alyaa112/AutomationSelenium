@@ -1,11 +1,9 @@
 package com.seb.technicalassessment.runner;
 
-import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import io.cucumber.testng.FeatureWrapper;
 import io.cucumber.testng.PickleWrapper;
 import io.cucumber.testng.TestNGCucumberRunner;
-import org.junit.runner.RunWith;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -24,11 +22,6 @@ public class RunnerTest {
     @BeforeClass(alwaysRun = true)
     public void setup() {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
-    }
-
-    @Test(dataProvider = "feature")
-    public void features(PickleWrapper eventWrapper, FeatureWrapper cucumberFeature) throws Throwable {
-        testNGCucumberRunner.runScenario(eventWrapper.getPickle());
     }
 
     @AfterClass(alwaysRun = true)

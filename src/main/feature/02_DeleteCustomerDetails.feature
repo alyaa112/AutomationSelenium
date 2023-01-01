@@ -7,5 +7,7 @@ Feature: Delete customer details feature
     Given user login as bank manager
     And user goes to Customer tab
 
+    @SEBTest
+    Scenario: Delete customer details and verify
     When user deletes customer details
     Then deleted customer details should not be visible on screen

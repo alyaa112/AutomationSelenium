@@ -24,6 +24,11 @@ public class RunnerTest {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
     }
 
+    @Test(dataProvider = "feature")
+    public void features(PickleWrapper eventWrapper, FeatureWrapper cucumberFeature) throws Throwable {
+        testNGCucumberRunner.runScenario(eventWrapper.getPickle());
+    }
+
     @AfterClass(alwaysRun = true)
     public void tearDownClass() {
         testNGCucumberRunner.finish();

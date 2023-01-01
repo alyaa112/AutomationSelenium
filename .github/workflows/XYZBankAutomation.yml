@@ -1,13 +1,13 @@
 #Author: Norfatin 'Alyaa binti Khairuddin
 #        fatinalyaa.khairuddin@gmail.com
 
-name: Java CI with Maven
+name: SEB Technical Assessment
 
 on:
   push:
-    branches: [ "automation001" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "automation001" ]
+    branches: [ "main" ]
     
   #enable manually trigger workflow on github actions page(UI)
   workflow_dispatch:

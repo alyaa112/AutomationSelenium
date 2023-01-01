@@ -1,9 +1,6 @@
 package com.seb.technicalassessment.runner;
 
 import io.cucumber.junit.CucumberOptions;
-import io.cucumber.testng.TestNGCucumberRunner;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 
 @CucumberOptions(
         plugin = {"pretty", "json:target/cucumber-reports/Cucumber.json", "html:target/cucumber-reports/Cucumber.html",
@@ -15,16 +12,6 @@ import org.testng.annotations.BeforeClass;
     )
 
 public class RunnerTest {
-    private TestNGCucumberRunner testNGCucumberRunner;
 
-    @BeforeClass(alwaysRun = true)
-    public void setup() {
-        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void tearDownClass() {
-        testNGCucumberRunner.finish();
-    }
 
 }

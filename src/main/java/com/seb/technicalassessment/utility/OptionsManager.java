@@ -1,5 +1,7 @@
 package com.seb.technicalassessment.utility;
 
+import org.openqa.selenium.chrome.ChromeOptions;
+
 public class OptionsManager extends Constants {
 
     //Get Chrome Options

@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
         plugin = {"pretty", "json:target/cucumber-reports/Cucumber.json", "html:target/cucumber-reports/Cucumber.html",
                 "junit:target/cucumber-reports/Cucumber.xml"},
         features = {"src/test/feature/"},
-        glue = {"src/test/java/com/seb/technicalassessment/stepdefinition"},
+        glue = {"com.seb.technicalassessment.stepdefinition"},
         tags = "@SEBTest",
         monochrome = true
     )

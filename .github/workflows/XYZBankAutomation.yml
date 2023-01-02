@@ -27,7 +27,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Build with Maven
-        run: mvn clean install -B package --file pom.xml
+      run: mvn clean install -B package --file pom.xml
 #
 #    - name: Restore Maven cache
 #      uses: skjolber/maven-cache-github-action@v1

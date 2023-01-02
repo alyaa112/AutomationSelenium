@@ -6,6 +6,7 @@ import com.seb.technicalassessment.utility.CommonTests;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class LoginScreenPage extends CommonTests {
 
     LoginScreen loginScreen = new LoginScreen();
@@ -15,21 +16,21 @@ public class LoginScreenPage extends CommonTests {
     }
 
     //Method to launch web app
-    public void launchWebApp() {
+    public void launchWebApp() throws InterruptedException {
         BaseTest.setup();
-        System.out.print("Application launched");
+        System.out.println("Application launched");
     }
 
     //method to verify login screen
     public void verifyLoginScreenVisibility() {
-        loginScreen.MENU_HEADER.isDisplayed();
-        loginScreen.USER_OPTION.get(0).isDisplayed();
-        System.out.print("Menu screen is visible");
+        waitForPageLoadedState();
+        loginScreen.BANK_MANAGER_OPTION.isDisplayed();
+        System.out.println("Menu screen is visible");
     }
 
     //method to click on user option
-    public void clickUserOption(int option) {
-        loginScreen.USER_OPTION.get(option).click();
-        System.out.print("Clicked on " + option);
+    public void clickUserOption() {
+        loginScreen.BANK_MANAGER_OPTION.click();
+        System.out.println("Clicked on bank manager");
     }
 }

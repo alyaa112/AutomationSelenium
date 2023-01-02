@@ -6,11 +6,12 @@ public class Constants {
         public static final String XYZ_BANK_URL = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login";
         public static final String NODE_URL = "http://localhost:4444/wd/hub";
         public static final String WINDOW_START_STATE = "--start-maximized";
+        public static final String WEB_PAGE_STATE = "return document.readyState";
+        public static final String WEB_PAGE_STATUS = "complete";
         public static final String EXECUTION_MODE = "headless";
     }
 
     public class CommonDetails {
-        public static final int BANK_MANAGER_OPTION = 1;
         public static final int FIRST_NAME_TEXTFIELD = 0;
         public static final int LAST_NAME_TEXTFIELD = 1;
         public static final int POSTCODE_TEXTFIELD = 2;

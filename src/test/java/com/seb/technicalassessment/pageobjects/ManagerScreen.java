@@ -8,15 +8,15 @@ import java.util.List;
 
 public class ManagerScreen implements AppLocators.ManagerScreen {
     //page locator for add cust option
-    @FindBy(xpath = addCustomerOption)
+    @FindBy(css = addCustomerOption)
     public WebElement ADD_CUST_OPTION;
 
     //page locator for open acc option
-    @FindBy(xpath = openAccountOption)
-    public WebElement OPEN_ACC_OPTION;
+    @FindBy(css = managerTasksButtons)
+    public WebElement MANAGER_TASKS_BUTTONS;
 
     //page locator for cust option
-    @FindBy(xpath = customersOption)
+    @FindBy(css = customersOption)
     public WebElement CUST_OPTION;
 
     //page locator for details textfields
@@ -34,4 +34,8 @@ public class ManagerScreen implements AppLocators.ManagerScreen {
     //page locator for table field
     @FindBy(xpath = tableLastNameCol)
     public List<WebElement> TABLE_LASTNAME_COL;
+
+    //page locator for delete button
+    @FindBy(xpath = deleteButton)
+    public List<WebElement> DELETE_BUTTON;
 }

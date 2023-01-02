@@ -8,6 +8,7 @@ Feature: Add customer details feature
     And manager screen is visible
 
     @SEBTest
-    Scenario: Add new customer details and verify
-    When user adds new customer details
-    Then customer details should be saved
+      Scenario: Add new customer details and verify
+      When user adds new customer details and verify it
+      And user deletes some customers
+      Then deleted customer details should not be visible on screen

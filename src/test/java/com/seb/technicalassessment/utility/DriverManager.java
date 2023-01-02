@@ -11,20 +11,16 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class DriverManager implements IInvokedMethodListener {
-    private static final ThreadLocal<RemoteWebDriver> remoteWebDriver = new ThreadLocal<>();
-    public final CapabilityFactory capabilityFactory = new CapabilityFactory();
-
-    public static synchronized WebDriver getDriver() {
-        return remoteWebDriver.get();
-    }
-
-    public static synchronized void setDriver(RemoteWebDriver driver) {
-        remoteWebDriver.set(driver);
-    }
+    private static ThreadLocal<RemoteWebDriver> remoteDriver = new ThreadLocal<>();
+    public CapabilityFactory capabilityFactory = new CapabilityFactory();
 
     @Parameters(value = {"browser"})
     private void createInstance(String browser) throws MalformedURLException {
-        setDriver(new RemoteWebDriver(new URL(Constants.WebConfig.NODE_URL), capabilityFactory.getCapabilities(browser)));
+        remoteDriver.set(new RemoteWebDriver(new URL(Constants.WebConfig.NODE_URL), capabilityFactory.getCapabilities(browser)));
+    }
+
+    public static WebDriver getDriver() {
+        return remoteDriver.get();
     }
 
     //To instantiate webdriver in the beginning of every run
@@ -47,7 +43,6 @@ public class DriverManager implements IInvokedMethodListener {
             RemoteWebDriver remoteDriver = (RemoteWebDriver) getDriver();
             if (remoteDriver != null) {
                 remoteDriver.quit();
-                remoteWebDriver.remove();
             }
         }
     }

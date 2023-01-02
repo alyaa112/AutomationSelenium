@@ -9,7 +9,7 @@ public class OptionsManager extends Constants {
         ChromeOptions options = new ChromeOptions();
         options.addArguments(WebConfig.WINDOW_START_STATE);
         options.addArguments(ChromeConfigurations.SANDBOX_FLAG);
-        options.addArguments(WebConfig.EXECUTION_MODE);
+        //options.addArguments(WebConfig.EXECUTION_MODE);
         options.addArguments(ChromeConfigurations.CERTIFICATE_ERROR);
         options.addArguments(ChromeConfigurations.POP_UP_DISABLE);
         options.addArguments(ChromeConfigurations.WINDOW_SIZE);

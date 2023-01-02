@@ -1,13 +1,13 @@
 #Author: Norfatin 'Alyaa binti Khairuddin
 #        fatinalyaa.khairuddin@gmail.com
 
-name: Java CI with Maven
+name: SEB Technical Assessment
 
 on:
   push:
-    branches: [ "automation001" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "automation001" ]
+    branches: [ "main" ]
     
   #enable manually trigger workflow on github actions page(UI)
   workflow_dispatch:
@@ -25,11 +25,24 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-        cache: maven
-        
+
+    - name: Start docker service
+      run: sudo service docker start
+
+    - name: Start docker compose
+      run: |
+        docker-compose up -d
+
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
-   
+      run: mvn clean install -B package --file pom.xml
+
+    - name: Keep artifacts
+      uses: actions/upload-artifact@v3.0.0
+      if: always()
+      with:
+        path: ${{ github.workspace }}/target/surefire-reports/TEST-*.xml
+        if-no-files-found: error
+
    #prints out build status with report for each workflow 
     - name: Report
       uses: scacap/action-surefire-report@v1

@@ -36,13 +36,13 @@ jobs:
     - name: Build with Maven
       run: mvn clean install -B package --file pom.xml
 
-#    - name: Keep artifacts
-#      uses: actions/upload-artifact@v3.0.0
-#      if: always()
-#      with:
-#        path: ${{ github.workspace }}/result/
-#        if-no-files-found: error
-#
+    - name: Keep artifacts
+      uses: actions/upload-artifact@v3.0.0
+      if: always()
+      with:
+        path: ${{ github.workspace }}/target/surefire-reports/TEST-*.xml
+        if-no-files-found: error
+
    #prints out build status with report for each workflow 
     - name: Report
       uses: scacap/action-surefire-report@v1

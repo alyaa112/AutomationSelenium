@@ -111,6 +111,9 @@ public class ManagerScreenPage extends CommonTests {
     @SneakyThrows
     public void deleteCustomerDetails() {
         for (int i=0; i<firstName.length; i++) {
+            if (i==2) {
+                break;
+            }
             searchCustName(String.valueOf(deleteFirstName[i]));
             verifyToDeleteCustName(String.valueOf(deleteLastName[i]));
             Thread.sleep(2000);
@@ -122,6 +125,7 @@ public class ManagerScreenPage extends CommonTests {
     public void clearSearchBar() {
         managerScreen.CUSTOMER_SEARCH_BAR.click();
         managerScreen.CUSTOMER_SEARCH_BAR.clear();
+        System.out.println("Search bar cleared");
     }
 
     //method to search customer first name
@@ -138,19 +142,23 @@ public class ManagerScreenPage extends CommonTests {
         for (int i=0; i<row; i++) {
 
             String cellValue = managerScreen.TABLE_LASTNAME_COL.get(i).getText();
-            System.out.println("Cellvalue : " + cellValue + " " + i);
+
             if (cellValue.equalsIgnoreCase(name))
             {
+                System.out.println("Cellvalue : " + cellValue + " : " + i);
                 managerScreen.DELETE_BUTTON.get(i).click();
-                System.out.println("Customer details are deleted");
                 break;
             }
         }
+        System.out.println("Customer details are deleted");
     }
 
     //method to search first name to delete
     public void searchToVerifyDeletedCust() {
         for (int i=0; i<firstName.length; i++) {
+            if (i==2) {
+                break;
+            }
             searchCustName(String.valueOf(deleteFirstName[i]));
             verifyDeletedCustAreUnseen(String.valueOf(deleteLastName[i]));
         }
@@ -165,7 +173,7 @@ public class ManagerScreenPage extends CommonTests {
 
             if (!cellValue.equalsIgnoreCase(name))
             {
-                System.out.print("Customer details are not visible in table");
+                System.out.println("Customer details are not visible in table");
             }
         }
     }

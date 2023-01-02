@@ -26,15 +26,15 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
 
-    - name: Build with Maven
-      run: mvn clean install -B package --file pom.xml
-
     - name: Start docker service
       run: sudo service docker start
 
     - name: Start docker compose
       run: |
         docker-compose up -d
+
+    - name: Build with Maven
+      run: mvn clean install -B package --file pom.xml
 
 #    - name: Keep artifacts
 #      uses: actions/upload-artifact@v3.0.0

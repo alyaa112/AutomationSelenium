@@ -1,7 +1,7 @@
 #Author: Norfatin 'Alyaa binti Khairuddin
 #        fatinalyaa.khairuddin@gmail.com
 
-name: SEB Technical Assessment
+name: Automation testing with Selenium
 
 on:
   push:
